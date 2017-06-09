@@ -25,11 +25,12 @@ $text = strtolower($text);
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "keyboard": [["uno"], ["due"], ["tre"], ["quattro"]], "one_time_keyboard": false}';
-	$response = "Benvenuto in AlterBot, il bot di Alter.Polis per aiutare gli studenti \n cosa vuoi fare?";
+	$parameters["reply_markup"] = '{ "keyboard": [[["uno"], ["due"]], [["tre"], ["quattro"]]], "one_time_keyboard": false}';
+	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
-elseif($text=="uno")
+elseif($text=="1. Chi siamo")
 {
+	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["I nostri rappresentanti"]], "one_time_keyboard": true}';
 	$response = "risposta 1";
 }
 elseif($text=="due")
