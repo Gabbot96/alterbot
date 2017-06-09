@@ -20,13 +20,6 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-header("Content-Type: application/json");
-// rispondo con array JSON composto da chat_id, text, method
-$parameters['chat_id'] = $chatId;
-$parameters["method"] = "sendMessage";
-
-
-echo json_encode($parameters);
 
 
 if(strpos($text, "/start") == "/start")
@@ -46,6 +39,11 @@ else
 {
 	$response = "Comando non valido!";
 }
+
+header("Content-Type: application/json");
+// rispondo con array JSON composto da chat_id, text, method
+$parameters['chat_id'] = $chatId;
+
 $parameters["text"] = $response;
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
