@@ -25,7 +25,7 @@ $text = strtolower($text);
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "keyboard": [[["uno"], ["due"]], [["tre"], ["quattro"]]], "one_time_keyboard": false}';
+	$parameters["reply_markup"] = '{ "keyboard": [["1. Chi siamo"], ["due"], ["tre"], ["quattro"]], "one_time_keyboard": false}';
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
 elseif($text=="1. Chi siamo")
