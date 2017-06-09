@@ -20,7 +20,8 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-
+$parameters["reply_markup"] = "";
+$response = "";
 
 if(strpos($text, "/start") == "/start")
 {
