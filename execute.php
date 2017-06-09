@@ -26,6 +26,7 @@ if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
 	$parameters["reply_markup"] = '{ "keyboard": [["uno"], ["due"], ["tre"], ["quattro"]], "one_time_keyboard": false}';
+	$response = "Benvenuto in AlterBot, il bot di Alter.Polis per aiutare gli studenti \n cosa vuoi fare?";
 }
 elseif($text=="uno")
 {
