@@ -1,8 +1,8 @@
 <?php
 
 // PARAMETRI DA MODIFICARE
-$WEBHOOK_URL = 'https://altertest.herokuapp.com/execute.php';
-$BOT_TOKEN = '345269711:AAHhI6h6X6I9HnfBmdf94b2RcmYerRngFJ4';
+$WEBHOOK_URL = 'https://altertest.herokuapp.com/execute.php'; //host
+$BOT_TOKEN = '345269711:AAHhI6h6X6I9HnfBmdf94b2RcmYerRngFJ4'; //token del botfather
 
 // NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
 $API_URL = 'https://api.telegram.org/bot' . $BOT_TOKEN .'/';
