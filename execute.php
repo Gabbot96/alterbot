@@ -33,7 +33,7 @@ if(strpos($text, "/start") == "/start")
 }
 elseif($text == "1. Chi siamo")
 {
-	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["I nostri rappresentanti"]], "one_time_keyboard": true}';
+	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["I nostri rappresentanti"]], "one_time_keyboard": true, "resize_keyboard": true}';
 	$response = "risposta 1";
 }
 elseif($text == "due")
