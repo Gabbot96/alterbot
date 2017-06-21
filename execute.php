@@ -42,7 +42,7 @@ elseif($text == "due")
 }
 else
 {
-	$response = "Comando non valido!";
+	$response = $text;  //debug only
 }
 
 header("Content-Type: application/json");
