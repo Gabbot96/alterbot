@@ -29,7 +29,7 @@ $response = "";
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "keyboard": [[["1. Chi siamo"], ["2. Contattaci"]], [[":earth_americas: Lingua"], ["4. Credits"]]], "one_time_keyboard": false}';
+	$parameters["reply_markup"] = '{ "keyboard": [["1. Chi siamo"], ["2. Contattaci"], [":earth_americas: Lingua"], ["4. Credits"]], "one_time_keyboard": false}';
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
 elseif($text == "1. Chi siamo")
