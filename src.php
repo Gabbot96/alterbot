@@ -4,10 +4,6 @@ define('api', 'https://api.telegram.org/bot'.token.'/');
 
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
-if(!$update)
-{
-  exit;
-}
 
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
@@ -17,8 +13,13 @@ $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name']
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
-$text = trim($text);
 
+$cbid = $update['callback_query']['from']['update'];
+$cbdata = $update['callback_query']['data'];
+
+function callback($up){
+	return $up["callback_query"]; 
+}
 
 function request($method){
         $req = file_get_contents(api.$method);
