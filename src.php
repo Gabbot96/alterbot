@@ -44,7 +44,7 @@ function inlinekeyboard($layout, $id, $msgtext){
 	return request("sendMessage?text=$msgtext&parse_mode=Markdown&chat_id=$id&reply_markup=$keyboard");
 }
 
-function editmsg($chatid, $msg, $edited, $inline){
+function editmsg($chatid, $msg, $inline, $edited){
         if(strpos($edited, "\n")){
 		$edited = urlencode($edited);
 	}
