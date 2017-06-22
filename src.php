@@ -14,7 +14,7 @@ $username = isset($message['chat']['username']) ? $message['chat']['username'] :
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 
-$cbid = $update['callback_query']['from']['update'];
+$cbid = $update['callback_query']['id'];		//['from']['update'];
 $cbdata = $update['callback_query']['data'];
 
 $msgid = $update['callback_query']['message']['message_id'];
@@ -46,6 +46,7 @@ function inlinekeyboard($layout, $id, $msgtext){
 }
 
 function editmsg($msg, $inline, $edited){
+	request("answerCallbackQuery?callback_query_id=$cbid
         if(strpos($edited, "\n")){
 		$edited = urlencode($edited);
 	}
