@@ -20,7 +20,7 @@ $msgid = $update['callback_query']['message']['message_id'];
 $ilmsgid = $update['callback_query']['inline_message_id'];
 
 function callback($up){
-	//$chatId = $message['chat']['id']
+	$chatId = $update['message']['chat']['id']
 	return $up["callback_query"]; 
 }
 
