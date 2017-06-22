@@ -1,15 +1,14 @@
 <?php
 
-// recupero il contenuto inviato da Telegram
+define('api', 'https://api.telegram.org/bot'.token.'/');
+
 $content = file_get_contents("php://input");
-// converto il contenuto da JSON ad array PHP
 $update = json_decode($content, true);
-// se la richiesta è null interrompo lo script
 if(!$update)
 {
   exit;
 }
-// assegno alle seguenti variabili il contenuto ricevuto da Telegram
+
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
@@ -27,10 +26,19 @@ function request($method){
 }
 
 function sendMess($id, $urltext){
-        
-
-
-
-
-
+        if(strpos($urltext, "\n")){
+		$urltext = urlencode($urltext);
+	}
+	return request("sendMessage?text=$urltext&parse_mode=HTML&chat_id=$id");
 }
+
+function inlinekeyboard($layout, $id, $msgtext){
+        if(strpos($msgtext, "\n")){
+		$msgtext = urlencode($msgtext);
+	}
+	$keyboard = array("inline_keyboard" => $layout,);
+	$keyboard = json_encode($keyboard);
+	return request("sendMessage?text=$msgtext&parse_mode=Markdown&chat_id=$id&reply_markup=$keyboard");
+}
+
+		
