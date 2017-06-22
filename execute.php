@@ -14,7 +14,7 @@ if(callback($update)){
 	if($cbdata == "menu_0"){ //menu principale
 		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
 		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
-		inlinekeyboard($button, $cbid, "");		
+		inlinekeyboard($button, $cbid, "lorem ipsum");		
 	}
 	elseif($cbdata == "menu_1"){
 		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
