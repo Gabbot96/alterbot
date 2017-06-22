@@ -2,9 +2,13 @@
 
 define('token','345269711:AAHhI6h6X6I9HnfBmdf94b2RcmYerRngFJ4');
 
-require_once 'src.php';
+include 'src.php';
 
-
+if($text == "/start"){
+	$button[] = array(array("text" => "🎓 Chi siamo", "callback_data" => "menu_1"), array("text" => "✉ Contattaci", "callback_data" => "menu_2"),);
+	$button[] = array(array("text" => "🌎 Lingua", "callback_data" => "menu_3"), array("text" => "❤ Credits", "callback_data" => "menu_4"),);
+	inlinekeyboard($button, $chatId, "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";	
+}
 
 
 
@@ -21,7 +25,7 @@ require_once 'src.php';
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "keyboard": [["🎓 Chi siamo"], ["✉ Contattaci"], ["🌎 Lingua"], ["❤ Credits"]], "one_time_keyboard": false}';
+	$parameters["reply_markup"] = '{ "keyboard": [[], [""], [""], [""]], "one_time_keyboard": false}';
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
 elseif($text == "🎓 Chi siamo")
