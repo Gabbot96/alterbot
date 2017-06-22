@@ -10,29 +10,33 @@ if($text == "/start"){
 	inlinekeyboard($button, $chatId, "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?");	
 }
 
-
-
-
-
-
-
-
-
-
-/*
-
-if($text == "🎓 Chi siamo")
-{
-	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]], "one_time_keyboard": false, "resize_keyboard": true}';
+if(callback($update)){
+	if($cbdata == "menu_0"){ //menu principale
+		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
+		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		inlinekeyboard($button, $chatId, "");		
+	}
+	elseif($cbdata == "menu_1"){
+		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
+		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		inlinekeyboard($button, $chatId, "");		
+	}
+	elseif($cbdata == "menu_2"){
+		$button[] = array(array("text" => "Organi Centrali", "callback_data" => "menu_2a"), array("text" => "Organi Periferici", "callback_data" => "menu_2b"),);
+		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		inlinekeyboard($button, $chatId, "");		
+	}
+	elseif($cbdata == "menu_3"){
+		$button[] = array(array("text" => "Italiano", "callback_data" => "it"), array("text" => "English", "callback_data" => "en"),);
+		$button[] = array(array("text" => "Italiano", "callback_data" => "fr"), array("text" => "中文", "callback_data" => "cc"),);
+		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		inlinekeyboard($button, $chatId, "");		
+	}
+	elseif($cbdata == "menu_4"){
+		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
+		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		inlinekeyboard($button, $chatId, "");		
+	}
 }
-elseif($text == "✉ Contattaci")
-{
-	$parameters["reply_markup"] = '{ "keyboard": [["Organi Centrali"], ["Organi Periferici"], ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
-}
-elseif($text == "🌎 Lingua")
-{
-	$parameters["reply_markup"] = '{ "keyboard": [["Italiano"], ["English"], ["Français"], ["中文"] ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
-	$response = "Feature in allestimento";
-}
 
-*/
+
