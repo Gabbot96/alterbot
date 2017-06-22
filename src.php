@@ -48,6 +48,8 @@ function editmsg($chatid, $msg, $inline, $edited){
         if(strpos($edited, "\n")){
 		$edited = urlencode($edited);
 	}
-	return request("editMessageText?chat_id=$chatid&message_id=$msg&text=$urltext&parse_mode=Markdown&reply_markup=$inline");
+	$keyboard = array("inline_keyboard" => $inline,);
+	$keyboard = json_encode($keyboard);
+	return request("editMessageText?chat_id=$chatid&message_id=$msg&text=$urltext&parse_mode=Markdown&reply_markup=$keyboard");
 }
 		
