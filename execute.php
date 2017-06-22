@@ -21,7 +21,7 @@ if(callback($update)){
 		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
 		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
 		editmsg($chatId, $msgid, $button, "lorem ipsum");
-		send($cbid, "ritenta");
+		sendMess($cbid, "ritenta");
 	}
 	elseif($cbdata == "menu_2"){
 		$button[] = array(array("text" => "Organi Centrali", "callback_data" => "menu_2a"), array("text" => "Organi Periferici", "callback_data" => "menu_2b"),);
