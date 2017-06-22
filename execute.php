@@ -20,14 +20,13 @@ if(callback($update)){
 	elseif($cbdata == "menu_1"){
 		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1a"), array("text" => "LINK", "callback_data" => "menu_1b"),);
 		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
-		editmsg($chatId, $msgid, $button, "lorem ipsum");
-		sendMess($cbid, "ritenta1");
-		sendMess($chatId, "ritenta2");
+		editmsg($cbid, $msgid, $button, "questo è il menu 1");
+
 	}
 	elseif($cbdata == "menu_2"){
 		$button[] = array(array("text" => "Organi Centrali", "callback_data" => "menu_2a"), array("text" => "Organi Periferici", "callback_data" => "menu_2b"),);
 		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
-		inlinekeyboard($button, $chatId, "");		
+		editmsg($cbid, $msgid, $button, "questo è il menu 2");		
 	}
 	elseif($cbdata == "menu_3"){
 		$button[] = array(array("text" => "Italiano", "callback_data" => "it"), array("text" => "English", "callback_data" => "en"),);
