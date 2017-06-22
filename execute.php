@@ -25,20 +25,30 @@ $parameters["reply_markup"] = "";
 $response = "";
 
 
+
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "keyboard": [["1. Chi siamo"], ["due"], ["tre"], ["quattro"]], "one_time_keyboard": false}';
+	$parameters["reply_markup"] = '{ "keyboard": [["1. Chi siamo"], ["2. Contattaci"]], [[":earth_americas: Lingua"], ["4. Credits"]]], "one_time_keyboard": false}';
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
 elseif($text == "1. Chi siamo")
 {
-	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["I nostri rappresentanti"]], "one_time_keyboard": true, "resize_keyboard": true}';
-	$response = "risposta 1";
+	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]], "one_time_keyboard": false, "resize_keyboard": true}';
+	$response = "";
 }
-elseif($text == "due")
+elseif($text == "2. Rappresentanti")
 {
-	$response = "risposta 2";
+	$parameters["reply_markup"] = '{ "keyboard": [["Organi Centrali"], ["Organi Periferici"], ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
+}
+elseif($text == ":earth_americas: Lingua")
+{
+	$parameters["reply_markup"] = '{ "keyboard": [["Italiano"], ["English"], ["Français"], ["中文"] ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
+	$response = "Feature in allestimento";
+}
+elseif($text == "4. Credits")
+{
+	$response = "";
 }
 else
 {
