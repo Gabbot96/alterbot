@@ -17,8 +17,8 @@ $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name']
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
-$text = trim($text);
-//$text = strtolower($text); creates problems while gathering text from custom keyboard in if cycle
+$text = trim($text, $trimchar);
+
 
 $parameters['chat_id'] = $chatId;
 $parameters["reply_markup"] = "";
@@ -28,17 +28,25 @@ $response = "";
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "keyboard": [["1. Chi siamo"], ["due"], ["tre"], ["quattro"]], "one_time_keyboard": false}';
+	$parameters["reply_markup"] = '{ "keyboard": [["🎓 Chi siamo"], ["✉ Contattaci"], ["🌎 Lingua"], ["❤ Credits"]], "one_time_keyboard": false}';
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
-elseif($text == "1. Chi siamo")
+elseif($text == "🎓 Chi siamo")
 {
-	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["I nostri rappresentanti"]], "one_time_keyboard": true, "resize_keyboard": true}';
-	$response = "risposta 1";
+	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]], "one_time_keyboard": false, "resize_keyboard": true}';
 }
-elseif($text == "due")
+elseif($text == "✉ Contattaci")
 {
-	$response = "risposta 2";
+	$parameters["reply_markup"] = '{ "keyboard": [["Organi Centrali"], ["Organi Periferici"], ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
+}
+elseif($text == "🌎 Lingua")
+{
+	$parameters["reply_markup"] = '{ "keyboard": [["Italiano"], ["English"], ["Français"], ["中文"] ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
+	$response = "Feature in allestimento";
+}
+elseif($text == "❤ Credits")
+{
+	$response = "";
 }
 else
 {
