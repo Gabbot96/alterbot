@@ -13,15 +13,14 @@ if($text == "/start"){
 
 if(callback($update)){
 	if($cbdata == "menu_0"){ //menu principale
-		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
-		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		$button[] = array(array("text" => "🎓 Chi siamo", "callback_data" => "menu_1"), array("text" => "✉ Contattaci", "callback_data" => "menu_2"),);
+		$button[] = array(array("text" => "🌎 Lingua", "callback_data" => "menu_3"), array("text" => "❤ Credits", "callback_data" => "menu_4"),);
 		editmsg($chatId, $msgid, $button, $words);		
 	}
 	elseif($cbdata == "menu_1"){
-		echo "##########\t"&$chatId&" && "&$cbid&"/t##########";
-		//$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1"), array("text" => "LINK", "callback_data" => "menu_2"),);
-		//$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
-		//editmsg($chatId, $msgid, $button, "lorem ipsum");
+		$button[] = array(array("text" => "Alter.Polis", "callback_data" => "menu_1a"), array("text" => "LINK", "callback_data" => "menu_1b"),);
+		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		editmsg($chatId, $msgid, $button, "lorem ipsum");
 		sendMess($cbid, "ritenta1");
 		sendMess($chatId, "ritenta2");
 	}
