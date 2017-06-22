@@ -24,13 +24,21 @@ $parameters['chat_id'] = $chatId;
 $parameters["reply_markup"] = "";
 $response = "";
 
+$keyboard = array(array(
+	array("text" => "🎓 Chi siamo")
+	array("text" => "✉ Rappresentanti")
+	array("text" => "🌎 Chi siamo")
+	array("text" => "❤ Credits")
+	));
+
+
 
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "inline_keyboard": [["Chi siamo"], ["Contattaci"], ["Lingua"], ["Credits"]]}';
+	$parameters["reply_markup"] = $keyboard;
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
-}
+} /*
 elseif($text == "Chi siamo")
 {
 	$parameters["reply_markup"] = '{ "inline_keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]]}';
@@ -52,6 +60,8 @@ else
 {
 	$response = $text;  //debug only
 }
+
+*/
 
 header("Content-Type: application/json");
 // rispondo con array JSON composto da chat_id, text, method
