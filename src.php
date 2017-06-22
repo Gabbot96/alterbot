@@ -20,7 +20,7 @@ $msgid = $update['callback_query']['message']['message_id'];
 $ilmsgid = $update['callback_query']['inline_message_id'];
 
 function callback($up){
-	$chatId = $message['chat']['id']
+	//$chatId = $message['chat']['id']
 	return $up["callback_query"]; 
 }
 
@@ -45,13 +45,13 @@ function inlinekeyboard($layout, $id, $msgtext){
 	return request("sendMessage?text=$msgtext&parse_mode=Markdown&chat_id=$id&reply_markup=$keyboard");
 }
 
-function editmsg($chatid, $msg, $inline, $edited){
+function editmsg($chat_id, $msg, $inline, $edited){
 	request("answerCallbackQuery?callback_query_id=$cbid");
         if(strpos($edited, "\n")){
 		$edited = urlencode($edited);
 	}
 	$keyboard = array("inline_keyboard" => $inline,);
 	$keyboard = json_encode($keyboard);
-	return request("editMessageText?chat_id=$chatid&message_id=$msg&text=$urltext&parse_mode=Markdown&reply_markup=$keyboard");
+	return request("editMessageText?chat_id=$chat_id&message_id=$msg&text=$urltext&parse_mode=Markdown&reply_markup=$keyboard");
 }
 		 
