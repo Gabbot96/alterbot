@@ -14,7 +14,7 @@ $username = isset($message['chat']['username']) ? $message['chat']['username'] :
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 
-$cbid = $update['callback_query']['from']['update'];
+$cbid = $update['callback_query']['from']['id'];
 $cbdata = $update['callback_query']['data'];
 $msgid = $update['callback_query']['message']['message_id'];
 $ilmsgid = $update['callback_query']['inline_message_id'];
