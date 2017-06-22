@@ -4,8 +4,9 @@ define('token','345269711:AAHhI6h6X6I9HnfBmdf94b2RcmYerRngFJ4');
 
 include 'src.php';
 
+$words = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
+
 if($text == "/start"){
-	$words = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 	$button[] = array(array("text" => "🎓 Chi siamo", "callback_data" => "menu_1"), array("text" => "✉ Contattaci", "callback_data" => "menu_2"),);
 	$button[] = array(array("text" => "🌎 Lingua", "callback_data" => "menu_3"), array("text" => "❤ Credits", "callback_data" => "menu_4"),);
 	inlinekeyboard($button, $chatId, $words);	
