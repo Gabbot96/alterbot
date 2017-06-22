@@ -25,11 +25,11 @@ $parameters["reply_markup"] = "";
 $response = "";
 
 $keyboard = array(array(
-	array("text" => "🎓 Chi siamo")
-	array("text" => "✉ Rappresentanti")
-	array("text" => "🌎 Chi siamo")
-	array("text" => "❤ Credits")
-	));
+	array("text" => "🎓 Chi siamo"),
+	array("text" => "✉ Rappresentanti"),
+	array("text" => "🌎 Chi siamo"),
+	array("text" => "❤ Credits"),
+	),);
 
 
 
