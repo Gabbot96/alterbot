@@ -46,7 +46,7 @@ function inlinekeyboard($layout, $id, $msgtext){
 }
 
 function editmsg($msg, $inline, $edited){
-	request("answerCallbackQuery?callback_query_id=$cbid
+	request("answerCallbackQuery?callback_query_id=$cbid");
         if(strpos($edited, "\n")){
 		$edited = urlencode($edited);
 	}
