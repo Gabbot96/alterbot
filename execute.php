@@ -8,10 +8,6 @@ if(!$update)
 {
   exit;
 }
-
-//caratteri da trimmare
-$trimchar = array(' ', '🎓','✉', '🌎', '❤');
-
 // assegno alle seguenti variabili il contenuto ricevuto da Telegram
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
@@ -35,20 +31,20 @@ if(strpos($text, "/start") == "/start")
 	$parameters["reply_markup"] = '{ "keyboard": [["🎓 Chi siamo"], ["✉ Contattaci"], ["🌎 Lingua"], ["❤ Credits"]], "one_time_keyboard": false}';
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
-elseif($text == "Chi siamo")
+elseif($text == "🎓 Chi siamo")
 {
 	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]], "one_time_keyboard": false, "resize_keyboard": true}';
 }
-elseif($text == "Rappresentanti")
+elseif($text == "✉ Contattaci")
 {
 	$parameters["reply_markup"] = '{ "keyboard": [["Organi Centrali"], ["Organi Periferici"], ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
 }
-elseif($text == "Lingua")
+elseif($text == "🌎 Lingua")
 {
 	$parameters["reply_markup"] = '{ "keyboard": [["Italiano"], ["English"], ["Français"], ["中文"] ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
 	$response = "Feature in allestimento";
 }
-elseif($text == "Credits")
+elseif($text == "❤ Credits")
 {
 	$response = "";
 }
