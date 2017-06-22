@@ -35,7 +35,6 @@ if(strpos($text, "/start") == "/start")
 elseif($text == "1. Chi siamo")
 {
 	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]], "one_time_keyboard": false, "resize_keyboard": true}';
-	$response = $text; //debug only
 }
 elseif($text == "2. Rappresentanti")
 {
