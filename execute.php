@@ -36,7 +36,7 @@ $keyboard = array(array(
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = $keyboard;
+	$parameters["reply_markup"] = array("inline_keyboard" => $keyboard);
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 } /*
 elseif($text == "Chi siamo")
