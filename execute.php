@@ -28,23 +28,23 @@ $response = "";
 if(strpos($text, "/start") == "/start")
 {
 	// imposto la keyboard
-	$parameters["reply_markup"] = '{ "keyboard": [["🎓 Chi siamo"], ["✉ Contattaci"], ["🌎 Lingua"], ["❤ Credits"]], "one_time_keyboard": false}';
+	$parameters["reply_markup"] = '{ "inline_keyboard": [["Chi siamo"], ["Contattaci"], ["Lingua"], ["Credits"]]}';
 	$response = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
 }
-elseif($text == "🎓 Chi siamo")
+elseif($text == "Chi siamo")
 {
-	$parameters["reply_markup"] = '{ "keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]], "one_time_keyboard": false, "resize_keyboard": true}';
+	$parameters["reply_markup"] = '{ "inline_keyboard": [["Alter.Polis"], ["LINK"], ["Indietro"]]}';
 }
-elseif($text == "✉ Contattaci")
+elseif($text == "Contattaci")
 {
-	$parameters["reply_markup"] = '{ "keyboard": [["Organi Centrali"], ["Organi Periferici"], ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
+	$parameters["reply_markup"] = '{ "inline_keyboard": [["Organi Centrali"], ["Organi Periferici"], ["Indietro"]]}';
 }
-elseif($text == "🌎 Lingua")
+elseif($text == "Lingua")
 {
-	$parameters["reply_markup"] = '{ "keyboard": [["Italiano"], ["English"], ["Français"], ["中文"] ["Indietro"]], "one_time_keyboard": true, "resize_keyboard": true}';
+	$parameters["reply_markup"] = '{ "inline_keyboard": [["Italiano"], ["English"], ["Français"], ["中文"] ["Indietro"]]}';
 	$response = "Feature in allestimento";
 }
-elseif($text == "❤ Credits")
+elseif($text == "Credits")
 {
 	$response = "";
 }
