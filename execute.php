@@ -16,7 +16,7 @@ if(callback($update)){
 	if($cbdata == "menu_0"){ //menu principale
 		$button[] = array(array("text" => "🎓 Chi siamo", "callback_data" => "menu_1"), array("text" => "✉ Rappresentanti", "callback_data" => "menu_2"),);
 		$button[] = array(array("text" => "🌎 Lingua", "callback_data" => "menu_3"), array("text" => "❤ Credits", "callback_data" => "menu_4"),);
-		editmsg($chatId, $msgid, $button, $words);		
+		editmsg($cbid, $msgid, $button, $words);		
 	}
 	elseif($cbdata == "menu_1"){ //Chi siamo
 		$button[] = array(array("text" => "Alter.Polis", "url" => "alterpolis.it/it/homepage/"), array("text" => "LINK", "url" => "linkcoordinamentouniversitario.it/"),);
