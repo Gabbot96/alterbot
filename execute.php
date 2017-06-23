@@ -33,12 +33,13 @@ if(callback($update)){
 		$button[] = array(array("text" => "🇮🇹 Italiano", "callback_data" => "it"), array("text" => "🇬🇧 English", "callback_data" => "en"),);
 		$button[] = array(array("text" => "🇫🇷 Français", "callback_data" => "fr"), array("text" => "🇨🇳 中文", "callback_data" => "cc"),);
 		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
-		editmsg($cbid, $msgid, $button, "⚠⚠⚠ WORK IN PROGRESS ⚠⚠⚠\n\nQuesta feature sarà presto disponibile\nThis feature will be available soon");  
+		editmsg($cbid, $msgid, $button, "⚠ WORK IN PROGRESS ⚠\n\nQuesta feature sarà presto disponibile\nThis feature will be available soon");  
 		
 	}
 	elseif($cbdata == "menu_4"){ //Credits
+		$text_4 = "*Bot sviluppato da:*\nGabriele Tavella\n\n*Con l'aiuto di:*\nDavid Chiappini\nMarco Rondina";
 		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
-		editmsg($cbid, $msgid, $button, "Bot sviluppato da: Gabriele Tavella\nCon l'aiuto di:\nDavid Chiappini\nMarco Rondina");
+		editmsg($cbid, $msgid, $button, $text_4);
 		
 	}
 	elseif($cbdata == "menu_2a"){ // Organi Centrali
