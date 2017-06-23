@@ -21,34 +21,34 @@ if(callback($update)){
 	}
 	elseif($cbdata == "menu_1"){ //Chi siamo
 		$button[] = array(array("text" => "Alter.Polis", "url" => "alterpolis.it/it/homepage/"), array("text" => "LINK", "url" => "linkcoordinamentouniversitario.it/"),);
-		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_0"),);
 		editmsg($cbid, $msgid, $button, "🎓 *Chi siamo*\n\n"."questo è il menu 1"); //inserire descrizione del collettivo e di LINK
 
 	}
 	elseif($cbdata == "menu_2"){ // Rappresentanti
 		$button[] = array(array("text" => "Organi Centrali", "callback_data" => "menu_2a"), array("text" => "Organi Periferici", "callback_data" => "menu_2b"),);
-		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_0"),);
 		editmsg($cbid, $msgid, $button, "✉ *Rappresentanti*\n\n"."questo è il menu 2");	//due parole sui nostri numeri negli organi	
 	}
 	elseif($cbdata == "menu_3"){ //Lingua
 		$button[] = array(array("text" => "🇮🇹 Italiano", "callback_data" => "it"), array("text" => "🇬🇧 English", "callback_data" => "en"),);
 		$button[] = array(array("text" => "🇫🇷 Français", "callback_data" => "fr"), array("text" => "🇨🇳 中文", "callback_data" => "cc"),);
-		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_0"),);
 		editmsg($cbid, $msgid, $button, "🌎 *Lingua*".$wip);  
 		
 	}
 	elseif($cbdata == "menu_4"){ //Credits
 		$text_4 = "*Bot sviluppato da:*\nGabriele Tavella\n\n*Con l'aiuto di:*\nDavid Chiappini\nMarco Rondina";
-		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_0"),);
+		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_0"),);
 		editmsg($cbid, $msgid, $button, "❤ *Credits*".$text_4);
 		
 	}
 	elseif($cbdata == "menu_2a"){ // Organi Centrali
-		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_2"),);
+		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_2"),);
 		editmsg($cbid, $msgid, $button, $wip);		
 	}
 	elseif($cbdata == "menu_2b"){ // Organi Periferici
-		$button[] = array(array("text" => "Indietro", "callback_data" => "menu_2"),);
+		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_2"),);
 		editmsg($cbid, $msgid, $button, $wip);	//implementare qua la ricerca	
 	}
 }
