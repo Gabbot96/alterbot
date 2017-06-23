@@ -3,21 +3,19 @@
 define('token','345269711:AAHhI6h6X6I9HnfBmdf94b2RcmYerRngFJ4');
 
 include 'src.php';
-
-$words = "Benvenuto in AlterBot \nIl bot di Alter.Polis per aiutare gli studenti \nCosa vuoi fare?";
-$wip = "⚠ WORK IN PROGRESS ⚠\n\nQuesta feature sarà presto disponibile\nThis feature will be available soon";
+include 'text.php';
 
 if($text == "/start"){
 	$button[] = array(array("text" => "🎓 Chi siamo", "callback_data" => "menu_1"), array("text" => "✉ Rappresentanti", "callback_data" => "menu_2"),);
 	$button[] = array(array("text" => "🌎 Lingua", "callback_data" => "menu_3"), array("text" => "❤ Credits", "callback_data" => "menu_4"),);
-	inlinekeyboard($button, $chatId, $words);	
+	inlinekeyboard($button, $chatId, $text_0);	
 }
 
 if(callback($update)){
 	if($cbdata == "menu_0"){ //menu principale
 		$button[] = array(array("text" => "🎓 Chi siamo", "callback_data" => "menu_1"), array("text" => "✉ Rappresentanti", "callback_data" => "menu_2"),);
 		$button[] = array(array("text" => "🌎 Lingua", "callback_data" => "menu_3"), array("text" => "❤ Credits", "callback_data" => "menu_4"),);
-		editmsg($cbid, $msgid, $button, $words);		
+		editmsg($cbid, $msgid, $button, $text_0);		
 	}
 	elseif($cbdata == "menu_1"){ //Chi siamo
 		$button[] = array(array("text" => "Alter.Polis", "url" => "alterpolis.it/it/homepage/"), array("text" => "LINK", "url" => "linkcoordinamentouniversitario.it/"),);
@@ -45,7 +43,7 @@ if(callback($update)){
 	}
 	elseif($cbdata == "menu_2a"){ // Organi Centrali
 		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_2"),);
-		editmsg($cbid, $msgid, $button, $wip);		
+		editmsg($cbid, $msgid, $button, $text_2a);		
 	}
 	elseif($cbdata == "menu_2b"){ // Organi Periferici
 		$button[] = array(array("text" => "↩ Indietro", "callback_data" => "menu_2"),);
